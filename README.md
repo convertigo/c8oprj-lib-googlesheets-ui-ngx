@@ -78,7 +78,7 @@ If you want to run the Sequences headless (by APIs or within a scheduled job) th
 
 This can be done in the following way :
 
-*  The connector will have to store a Refresh Token in a Convertigo user profile. To do this it will use the **lib_UserManager** to store the refresh token as an User attribute. This implies that a Convertigo user account must be created. You can do this by executing the **AddUser** Sequence in **lib_UserManager**
+*  The connector will have to store a Refresh Token in a Convertigo user profile. To do this it will use the **lib_UserManager_Ngx** to store the refresh token as an User attribute. This implies that a Convertigo user account must be created. You can do this by executing the **AddUser** Sequence in **lib_UserManager_Ngx**
 * When the Shared Action **DisplayGoogleDrivePicker** is executed, it will check if the current Convertigo session is Authenticated (If the Step **SetAuthenticatedSession** has been executed for this session). If it is, the Google Refresh Token will be persisted as an attribute to the current Authenticated User. **Caution!** This will only occur the first time a User asks access to the Google resources causing the Google Consent Screen to be displayed.
 * If you want to run a Sequence such as **SheetGetRange** headless (from an API of from a Scheduled job): 
 
