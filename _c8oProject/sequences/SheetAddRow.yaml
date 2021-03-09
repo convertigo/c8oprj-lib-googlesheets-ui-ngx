@@ -1,0 +1,122 @@
+comment: Add a row of cells to a Google Sheet.
+↓Call_Sequence [steps.SequenceStep-1608803967930]: 
+  sourceSequence: lib_GoogleSheet_Ngx.checkAccessTokenGoogle
+↓jSimpleSource [steps.SimpleSourceStep-1607870066651]: 
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1608803967930
+        - java.lang.String: 
+          - ↑value: ./document/token/text()
+  variableName: gCreds
+↓AddRow [steps.SimpleStep-1607870066654]: 
+  expression: |
+    ' var GSheetAPI = JavaImporter(
+      com.google.api.client.auth.oauth2.Credential,
+      com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp,
+      com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver,
+      com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow,
+      com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets,
+      com.google.api.client.googleapis.javanet.GoogleNetHttpTransport,
+      com.google.api.client.http.javanet.NetHttpTransport,
+      com.google.api.client.json.JsonFactory,
+      com.google.api.client.json.jackson2.JacksonFactory,
+      com.google.api.client.util.store.FileDataStoreFactory,
+      com.google.api.services.sheets.v4.Sheets,
+      com.google.api.services.sheets.v4.SheetsScopes,
+      com.google.api.services.sheets.v4.model.ValueRange,
+      com.google.api.client.googleapis.auth.oauth2.GoogleCredential,
+    
+      java.io.FileNotFoundException,
+      java.io.IOException,
+      java.io.InputStream,
+      java.io.ByteArrayInputStream,
+      java.io.InputStreamReader,
+      java.security.GeneralSecurityException,
+      java.util.Collections,
+      java.util.List,
+      java.util.ArrayList
+    );
+    
+    with (GSheetAPI) {
+    	APPLICATION_NAME = "Convertigo Form Builder";
+    	JSON_FACTORY = JacksonFactory.getDefaultInstance();	
+        HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
+    
+    	credential = new GoogleCredential().setAccessToken(gCreds);
+    	
+    	service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential)
+            .setApplicationName("Convertigo Form Builder")
+            .build();
+    
+    	setError = null;
+    
+    	try {
+    		log.warn("[Google Sreadsheet Connector] start...");				
+     		requestBody = new ValueRange();
+    	
+    		sheetData = new ArrayList();
+    		row = new ArrayList();
+    		for (i=0; i < dataRow.length; i++) {
+    			log.warn("[Google Sreadsheet Connector] add " + dataRow[i]);				
+    			row.add(dataRow[i])
+    		}
+    		sheetData.add(row);
+    		requestBody.setValues(sheetData);
+    		
+    			
+    		response = service.spreadsheets().values()
+    			.append(SheetID, Range, requestBody)
+    	        .setValueInputOption("RAW")
+    			.setInsertDataOption("OVERWRITE")
+    	        .execute();
+    
+    		log.warning("[Google Sreadsheet Connector] response" + response);				
+    		
+    	} catch (error) {
+    		setError = error;
+    		log.error("[Google Sreadsheet Connector] Error occured " + error);				
+    	}
+    }
+    '
+↓jIfThenElse [steps.IfThenElseStep-1607870066657]: 
+  condition: setError != null
+  ↓jThen [steps.ThenStep-1607870066660]: 
+    ↓Error_structure [steps.XMLErrorStep-1607870066663]: 
+      details: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: JS
+            - →→: setError
+      message: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: GoogleSheet connector error
+  ↓jElse [steps.ElseStep-1607870066666]: 
+↓SheetID [variables.RequestableVariable-1607870066717]: 
+  comment: The Sheet id as found in the google  sheet URL
+↓Range [variables.RequestableVariable-1607870066720]: 
+  comment: The Cell range to read. (examples, A1:D7 or  Class Data!A2:E)
+↓dataRow [variables.RequestableMultiValuedVariable-1607967884873]: 
+  comment: The data to be added 
+↓TestOk [core.TestCase]: 
+  ↓SheetID [variables.TestCaseVariable-1607870066727]: 
+    value: 1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms
+  ↓Range [variables.TestCaseVariable-1607870066730]: 
+    value: Class Data!A2:E
+  ↓dataRow [variables.TestCaseMultiValuedVariable-1607967611629]: 
+    value: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: val1
+          - java.lang.String: 
+            - ↑value: val2
+          - java.lang.String: 
+            - ↑value: val3

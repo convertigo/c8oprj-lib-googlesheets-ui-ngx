@@ -1,0 +1,31 @@
+↑convertigo: 8.0.0.m006
+↓lib_GoogleSheet_Ngx [core.Project]: 
+  comment: The Google Sheet Connector for Convertigo
+  version: 2.0.0
+  ↓GoogleOAuth [connectors.HttpConnector]: 🗏 connectors/GoogleOAuth.yaml
+  ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
+  ↓checkAccessTokenGoogle [sequences.GenericSequence]: 🗏 sequences/checkAccessTokenGoogle.yaml
+  ↓getApiKey [sequences.GenericSequence]: 🗏 sequences/getApiKey.yaml
+  ↓loginGoogleWithCode [sequences.GenericSequence]: 🗏 sequences/loginGoogleWithCode.yaml
+  ↓SheetAddRow [sequences.GenericSequence]: 🗏 sequences/SheetAddRow.yaml
+  ↓SheetGetRange [sequences.GenericSequence]: 🗏 sequences/SheetGetRange.yaml
+  ↓TestLogin [sequences.GenericSequence]: 🗏 sequences/TestLogin.yaml
+  ↓lib_OAuth_reference [references.ProjectSchemaReference]: 
+    comment: Used to get the Google OAuth token
+    projectName: lib_OAuth=https://github.com/convertigo/c8oprj-lib-oauth.git:branch=master
+  ↓lib_UserManager_reference [references.ProjectSchemaReference]: 
+    projectName: lib_UserManager_Ngx=https://github.com/convertigo/c8oprj-lib-user-manager-ngx.git:branch=master:autoPull=true
+  ↓MobileBuilderTemplate [references.ProjectSchemaReference]: 
+    comment: mobile builder template
+    projectName: mobilebuilder_tpl_8_0_0_ngx=https://github.com/convertigo/c8oprj-mobilebuilder-tpl.git:branch=mobilebuilder_tpl_8_0_0_ngx:autoPull=true
+  ↓Project_reference [references.ProjectSchemaReference]: 
+    comment: Used for the Demo App only
+    projectName: lib_ExtendedComponents_Ngx=https://github.com/convertigo/c8oprj-lib-extended-components-ngx.git:branch=master:autoPull=true
+  ↓MobileApplication [core.MobileApplication]: 
+    comment: Test and demo app to show Google Sheet capacities
+    splashRemoveMode: beforeUpdate
+    ↓Android [mobileplatforms.Android]: 
+      comment: Android platform
+    ↓iOS [mobileplatforms.IOs]: 
+      comment: iOS platform
+    ↓Application [ngx.components.ApplicationComponent]: 🗏 mobileApplication.yaml
