@@ -12,7 +12,7 @@
   ↓TestLogin [sequences.GenericSequence]: 🗏 sequences/TestLogin.yaml
   ↓lib_OAuth_reference [references.ProjectSchemaReference]: 
     comment: Used to get the Google OAuth token
-    projectName: lib_OAuth=https://github.com/convertigo/c8oprj-lib-oauth.git:branch=master
+    projectName: lib_OAuth=https://github.com/convertigo/c8oprj-lib-oauth.git:branch=7.9.0:autoPull=true
   ↓lib_UserManager_reference [references.ProjectSchemaReference]: 
     projectName: lib_UserManager_Ngx=https://github.com/convertigo/c8oprj-lib-user-manager-ngx.git:branch=master:autoPull=true
   ↓MobileBuilderTemplate [references.ProjectSchemaReference]: 
