@@ -67,21 +67,21 @@ title: Title for Page
       ↓Event [ngx.components.UIControlEvent-1607691095562]: 
         ↓InvokeSharedAction [ngx.components.UIDynamicInvoke-1607691143560]: 
           beanData: '{"ionBean":"InvokeAction"}'
-          stack: lib_GoogleSheet_Ngx.MobileApplication.Application.DisplayGoogleDrivePicker
+          stack: lib_GoogleSheet_ui_ngx.MobileApplication.Application.DisplayGoogleDrivePicker
           ↓CallSequence [ngx.components.UIDynamicAction-1607707852515]: 
-            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_GoogleSheet_Ngx.SheetGetRange"}'
+            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_GoogleSheet.SheetGetRange"}'
             ↓SheetID [ngx.components.UIControlVariable-1607707980038]: 
               comment: new variable
               varValue: 
                 - xmlizable: 
                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                  - MobileSmartSourceType: source:{"filter":"Action","project":"lib_GoogleSheet_Ngx","input":"","model":{"data":[{"priority":1607691143560}],"path":"?.out","prefix":"","suffix":"","custom":"","useCustom":false}}
+                  - MobileSmartSourceType: source:{"filter":"Action","project":"lib_GoogleSheet_ui_ngx","input":"","model":{"data":[{"priority":1607691143560}],"path":"?.out","prefix":"","suffix":"","custom":"","useCustom":false}}
             ↓Range [ngx.components.UIControlVariable-1607707980040]: 
               comment: new variable
               varValue: 
                 - xmlizable: 
                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                  - MobileSmartSourceType: source:{"filter":"Form","project":"lib_GoogleSheet_Ngx","input":"","model":{"data":[{"priority":1607708098382,"identifier":"form1607708098382"}],"path":"?.controls['range']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+                  - MobileSmartSourceType: source:{"filter":"Form","project":"lib_GoogleSheet_ui_ngx","input":"","model":{"data":[{"priority":1607708098382,"identifier":"form1607708098382"}],"path":"?.controls['range']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
             ↓FirstRowHeader [ngx.components.UIControlVariable-1607707980042]: 
               comment: new variable
               varValue: 
@@ -99,21 +99,21 @@ title: Title for Page
       ↓Event [ngx.components.UIControlEvent-1607955557236]: 
         ↓InvokeSharedAction [ngx.components.UIDynamicInvoke-1607955557239]: 
           beanData: '{"ionBean":"InvokeAction"}'
-          stack: lib_GoogleSheet_Ngx.MobileApplication.Application.DisplayGoogleDrivePicker
+          stack: lib_GoogleSheet_ui_ngx.MobileApplication.Application.DisplayGoogleDrivePicker
           ↓CallSequence [ngx.components.UIDynamicAction-1607955557242]: 
-            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_GoogleSheet_Ngx.SheetAddRow"}'
+            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_GoogleSheet.SheetAddRow"}'
             ↓SheetID [ngx.components.UIControlVariable-1607955557245]: 
               comment: new variable
               varValue: 
                 - xmlizable: 
                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                  - MobileSmartSourceType: source:{"filter":"Action","project":"lib_GoogleSheet_Ngx","input":"","model":{"data":[{"priority":1607955557239}],"path":"?.out","prefix":"","suffix":"","custom":"","useCustom":false}}
+                  - MobileSmartSourceType: source:{"filter":"Action","project":"lib_GoogleSheet_ui_ngx","input":"","model":{"data":[{"priority":1607955557239}],"path":"?.out","prefix":"","suffix":"","custom":"","useCustom":false}}
             ↓Range [ngx.components.UIControlVariable-1607955557248]: 
               comment: new variable
               varValue: 
                 - xmlizable: 
                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                  - MobileSmartSourceType: source:{"filter":"Form","project":"lib_GoogleSheet_Ngx","input":"","model":{"data":[{"priority":1607708098382,"identifier":"form1607708098382"}],"path":"?.controls['range']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+                  - MobileSmartSourceType: source:{"filter":"Form","project":"lib_GoogleSheet_ui_ngx","input":"","model":{"data":[{"priority":1607708098382,"identifier":"form1607708098382"}],"path":"?.controls['range']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
             ↓dataRow [ngx.components.UIControlVariable-1607968061573]: 
               comment: new variable
               varValue: 
@@ -134,7 +134,7 @@ title: Title for Page
     directiveSource: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-        - MobileSmartSourceType: source:{"filter":"Sequence","project":"lib_GoogleSheet_Ngx","input":"","model":{"data":[{"sequence":"lib_GoogleSheet_Ngx.SheetGetRange","marker":""}],"path":"?.sheet","prefix":"","suffix":"","custom":"","useCustom":false}}
+        - MobileSmartSourceType: source:{"filter":"Sequence","project":"lib_GoogleSheet_ui_ngx","input":"","model":{"data":[{"sequence":"lib_GoogleSheet.SheetGetRange","marker":""}],"path":"?.sheet","prefix":"","suffix":"","custom":"","useCustom":false}}
     ↓UseSharedComponent [ngx.components.UIUseShared-1607796970843]: 
       sharedcomponent: lib_ExtendedComponents_Ngx.MobileApplication.Application.agGrid
       ↓pagination [ngx.components.UIControlVariable-1607797553164]: 
@@ -182,13 +182,13 @@ title: Title for Page
         varValue: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-            - MobileSmartSourceType: source:{"filter":"Sequence","project":"lib_GoogleSheet_Ngx","input":"","model":{"data":[{"sequence":"lib_GoogleSheet_Ngx.SheetGetRange","marker":""}],"path":"?.sheet?.columns","prefix":"","suffix":"","custom":"","useCustom":false}}
+            - MobileSmartSourceType: source:{"filter":"Sequence","project":"lib_GoogleSheet_ui_ngx","input":"","model":{"data":[{"sequence":"lib_GoogleSheet.SheetGetRange","marker":""}],"path":"?.sheet?.columns","prefix":"","suffix":"","custom":"","useCustom":false}}
       ↓rowData [ngx.components.UIControlVariable-1607797553176]: 
         comment: 'Array of row { fieldName1: ''value1'', fieldName2: ''value2'', fieldName3: true, ...} objects'
         varValue: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-            - MobileSmartSourceType: source:{"filter":"Sequence","project":"lib_GoogleSheet_Ngx","input":"","model":{"data":[{"sequence":"lib_GoogleSheet_Ngx.SheetGetRange","marker":""}],"path":"?.sheet?.data","prefix":"","suffix":"","custom":"","useCustom":false}}
+            - MobileSmartSourceType: source:{"filter":"Sequence","project":"lib_GoogleSheet_ui_ngx","input":"","model":{"data":[{"sequence":"lib_GoogleSheet.SheetGetRange","marker":""}],"path":"?.sheet?.data","prefix":"","suffix":"","custom":"","useCustom":false}}
       ↓width [ngx.components.UIControlVariable-1607797553178]: 
         comment: width value in % or px
         varValue: 
@@ -220,4 +220,4 @@ title: Title for Page
             - MobileSmartSourceType: script:'ag-theme-balham'
 ↓PageEvent [ngx.components.UIPageEvent-1608743702416]: 
   ↓CallSequence [ngx.components.UIDynamicAction-1608743710188]: 
-    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_GoogleSheet_Ngx.TestLogin"}'
+    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_GoogleSheet.TestLogin"}'
