@@ -136,7 +136,7 @@ title: Title for Page
         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
         - MobileSmartSourceType: source:{"filter":"Sequence","project":"lib_GoogleSheet_ui_ngx","input":"","model":{"data":[{"sequence":"lib_GoogleSheet.SheetGetRange","marker":""}],"path":"?.sheet","prefix":"","suffix":"","custom":"","useCustom":false}}
     ↓UseSharedComponent [ngx.components.UIUseShared-1607796970843]: 
-      sharedcomponent: lib_ExtendedComponents_Ngx.MobileApplication.Application.agGrid
+      sharedcomponent: lib_ExtendedComponents_ui_ngx.MobileApplication.Application.agGrid
       ↓pagination [ngx.components.UIControlVariable-1607797553164]: 
         comment: 'boolean: true (default) or false'
         varValue: 
