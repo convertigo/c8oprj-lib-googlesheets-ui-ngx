@@ -1,7 +1,7 @@
 ↑convertigo: 8.0.0.m006
 ↓lib_GoogleSheet_ui_ngx [core.Project]: 
   comment: The Google Sheet Connector for Convertigo
-  version: 2.0.0
+  version: 3.0.0
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
   ↓lib_OAuth_reference [references.ProjectSchemaReference]: 
     comment: Used to get the Google OAuth token
